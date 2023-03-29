@@ -8,7 +8,7 @@ class Square:
 
     def __init__(self, size):
         """__init__: set size
-        
+
         check if size is integer and less than 0
 
         Args:
