@@ -9,8 +9,6 @@ class Square:
     def __init__(self, size):
         """set size
 
-        check if size is integer and less than 0
-
         Args:
             size: size of the square
         """
