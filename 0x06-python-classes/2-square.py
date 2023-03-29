@@ -14,7 +14,8 @@ class Square:
         Args:
             size: size of the square
         Attributes:
-            size: private"""
+            size: private
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
