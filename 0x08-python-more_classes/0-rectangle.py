@@ -2,6 +2,7 @@
 
 """rectangle class"""
 
+
 class Rectangle:
     """does nothing"""
     pass
