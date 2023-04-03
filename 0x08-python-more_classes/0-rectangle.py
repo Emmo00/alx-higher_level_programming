@@ -5,4 +5,5 @@
 
 
 class Rectangle:
+    """does nothing"""
     pass
