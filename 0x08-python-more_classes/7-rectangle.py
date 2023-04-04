@@ -6,6 +6,7 @@
 class Rectangle:
     """does stuff now"""
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """initiate rectangle object"""
@@ -20,7 +21,6 @@ class Rectangle:
         self.__width = width
         self.__height = height
         Rectangle.number_of_instances += 1
-        self.print_symbol = "#"
 
     @property
     def width(self):
