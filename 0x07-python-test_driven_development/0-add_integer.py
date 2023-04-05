@@ -8,5 +8,10 @@ The add_integer module supplies one function, add_integer(). For example,
 """
 
 def add_integer(a, b=98):
-    return a + b
+    """Returns the addition of two integers"""
 
+    if type(a) not in [int, float]:
+        raise TypeError("a must be an integer")
+    if type(b) not in [int, float]:
+        raise TypeError("b must be an integer")
+    return int(a) + int(b)
