@@ -10,5 +10,14 @@ The add_integer module supplies one function, add_integer(). For example,
 
 
 def matrix_divided(matrix, div):
-    result = [[(x / div) for x in row] for row in matrix]
+    if type(div) not in [int, float]:
+        raise TypeError("div must be a number")
+    length = len(matrix[0])
+    for row in matrix:
+        for x in row:
+            if type(x) not in [int, float]:
+                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        if len(row) != length:
+            raise TypeError("Each row of the matrix must have the same size")
+    result = [[round(x / div, 2) for x in row] for row in matrix]
     return result
