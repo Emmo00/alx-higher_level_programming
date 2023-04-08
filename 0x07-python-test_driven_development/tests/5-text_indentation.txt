@@ -1,0 +1,11 @@
+>>> import sys
+>>> sys.path.insert(0, '../')
+>>> text_indentation = __import__("5-text_indentation").text_indentation
+>>> text_indentation("hello world.how are you?this is the list:")
+hello world.
+<BLANKLINE>
+how are you?
+<BLANKLINE>
+this is the list:
+<BLANKLINE>
+>>>
