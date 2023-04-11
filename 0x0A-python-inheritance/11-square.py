@@ -12,11 +12,15 @@ class Square(Rectangle):
         """instantiate class object
         sets private attributes: size
         """
-        super().__init__(size, size)
-        self.__width = size
-        self.__height = size
+        self.integer_validator("size", size)
+        self.__size = size
 
     def area(self):
         """returns the area of the rectangle
         """
-        return self.__width * self.__height
+        return self.__size ** 2
+
+    def __str__(self):
+        return "[Square] {}/{}".format(
+                self.__size,
+                self.__size)
