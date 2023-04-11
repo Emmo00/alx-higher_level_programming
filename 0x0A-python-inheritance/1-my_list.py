@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-"""Defines MyList class - a subclass of the list class"""
+"""Defines MyList class - a subclass of the list class
+Example:
+    >>> my_list = MyList()
+    """
 
 
 class MyList(list):
