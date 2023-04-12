@@ -3,7 +3,6 @@
 """
 
 
-json = __import__('json')
 
 
 def class_to_json(obj):
@@ -11,4 +10,4 @@ def class_to_json(obj):
     (list, dictionary, string, integer and boolean)
     for JSON serialization of an object:
     """
-    return json.loads(json.dumps(obj.__dict__))
+    return obj.__dict__
