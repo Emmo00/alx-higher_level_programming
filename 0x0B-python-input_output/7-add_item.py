@@ -6,16 +6,16 @@ then save them to a file:
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-os = __import__('os')
+argv = __import__('sys').argv
 
 
 def main():
     my_list = []
-    av = os.argv[1:]
+    av = argv[1:]
     for arg in av:
         my_list.append(arg)
     save_to_json_file(my_list, "add_item.json")
 
 
-if __name__ == '__file__':
+if __name__ == '__main__':
     main()
