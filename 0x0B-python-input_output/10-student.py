@@ -18,10 +18,12 @@ class Student:
         """returns a dictionary representation of a
         Student instance
         """
-        if type(attrs) == list and type(attrs[0]) == str:
+        if type(attrs) == list:
             mdict = {}
             for attr in attrs:
-                if attr in self.__dict__:
+                if type(attr) != str:
+                    return self.__dict__
+                if attr in self.__dict__.keys():
                     mdict[attr] = self.__dict__[attr]
             return mdict
         else:
