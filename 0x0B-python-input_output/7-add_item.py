@@ -13,7 +13,7 @@ def main():
     my_list = []
     try:
         my_list = load_from_json_file("add_item.json")
-    except e:
+    except Exception as e:
         my_list = []
     av = argv[1:]
     for arg in av:
