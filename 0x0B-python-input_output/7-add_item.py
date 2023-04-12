@@ -15,6 +15,7 @@ def main():
     for arg in av:
         my_list.append(arg)
     save_to_json_file(my_list, "add_item.json")
+    load_from_json_file("add_item.json")
 
 
 if __name__ == '__main__':
