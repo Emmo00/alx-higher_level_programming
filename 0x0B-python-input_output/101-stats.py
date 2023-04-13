@@ -31,7 +31,7 @@ def main():
             filesize += int(filesize_in)
             if i % 10 == 0:
                 print_stats(filesize, status_codes)
-    except KeyboardInterrupt:
+    except KeyboardInterrupt as ki:
         print_stats(filesize, status_codes)
 
 
