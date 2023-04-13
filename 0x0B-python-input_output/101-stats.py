@@ -33,6 +33,7 @@ def main():
                 print_stats(filesize, status_codes)
     except KeyboardInterrupt as ki:
         print_stats(filesize, status_codes)
+        raise
 
 
 if __name__ == '__main__':
