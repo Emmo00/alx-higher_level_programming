@@ -12,7 +12,8 @@ def print_stats(filesize, status_stats):
             print("{}: {}".format(code, status_stats[code]))
 
 
-def main():
+if __name__ == '__main__':
+    import sys
     """main function
     """
     filesize = 0
@@ -21,20 +22,16 @@ def main():
             }
     i = 0
     try:
-        while True:
+        for line in sys.stdin:
             i += 1
-            line = input("")
             data_list = line.split(" ")
             status_in = data_list[-2]
             filesize_in = data_list[-1]
-            status_codes[int(status_in)] += 1
+            if int(status_in) in status_codes:
+                status_codes[int(status_in)] += 1
             filesize += int(filesize_in)
             if i % 10 == 0:
                 print_stats(filesize, status_codes)
     except KeyboardInterrupt as ki:
         print_stats(filesize, status_codes)
         raise
-
-
-if __name__ == '__main__':
-    main()
