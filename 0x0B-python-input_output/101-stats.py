@@ -7,7 +7,7 @@ def print_stats(filesize, status_stats):
     """prints stats collected
     """
     print("File size: {}".format(filesize))
-    for code in status_stats:
+    for code in sorted(status_stats):
         if status_stats[code] > 0:
             print("{}: {}".format(code, status_stats[code]))
 
