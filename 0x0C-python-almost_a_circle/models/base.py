@@ -15,3 +15,12 @@ class Base:
         else:
             self.__class__.__nb_objects += 1
             self.id = self.__class__.__nb_objects
+
+    def validate_integer(self, name, value=None):
+        """validate integers passed, raises an
+        exception if not an interger
+        """
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value < 0:
+            raise ValueError("{} must be greater than 0".format(name))
