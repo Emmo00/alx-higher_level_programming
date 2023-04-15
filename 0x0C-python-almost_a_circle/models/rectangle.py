@@ -9,7 +9,10 @@ from .base import Base
 class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        # validate args
+        self.validate_integer("width", width)
+        self.validate_integer("height", height)
+        self.validate_integer("x", x)
+        self.validate_integer("y", y)
         self.__width = width
         self.__height = height
         self.__x = x
@@ -33,20 +36,20 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        # validate width
+        self.validate_integer("width", value)
         self.__width = value
 
     @height.setter
     def height(self, value):
-        # validate height
+        self.validate_integer("height", value)
         self.__height = value
 
     @x.setter
     def x(self, value):
-        # validate x
+        self.validate_integer("x", value)
         self.__x = value
 
     @y.setter
     def y(self, value):
-        # validate y
+        self.validate_integer("y", value)
         self.__y = value

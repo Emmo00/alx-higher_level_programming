@@ -22,5 +22,7 @@ class Base:
         """
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if value < 0:
-            raise ValueError("{} must be greater than 0".format(name))
+        if value < 0 and name in ['x', 'y']:
+            raise ValueError("{} must be >= 0".format(name))
+        if value <= 0 and name not in ['x', 'y']:
+            raise ValueError("{} must be > 0".format(name))
