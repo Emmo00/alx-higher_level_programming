@@ -62,3 +62,12 @@ class Rectangle(Base):
             for __ in range(self.__height):
                 print("#", end="")
             print("")
+
+    def __str__(self):
+        return "[{}] ({}) {}/{} - {}/{}".format(
+                self.__name__,
+                self.id,
+                self.__x,
+                self.__y,
+                self.__width,
+                self._height)
