@@ -17,8 +17,8 @@ class Base:
         if id != None:
             self.id = id
         else:
-            self.__class__.__nb_objects += 1
-            self.id = self.__class__.__nb_objects
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
     def validate_integer(self, name, value=None):
         """validate integers passed, raises an
@@ -73,5 +73,7 @@ class Base:
                 ) as f:
             list_dictionaries_str = f.read()
             list_dictionaries = Base.from_json_string(list_dictionaries_str)
-            list_instances = map(cls.create, list_dictionaries)
-            return list(list_instances)
+            list_instances = []
+            for item in list_dictionaries:
+                list_instances.append(cls.create(**item))
+            return list_instances
