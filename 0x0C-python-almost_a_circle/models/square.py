@@ -35,3 +35,10 @@ class Square(Rectangle):
                 self.y,
                 self.width
                 )
+
+    def to_dictionary(self):
+        ndict = super().to_dictionary()
+        ndict['size'] = ndict['width']
+        del ndict['width']
+        del ndict['height']
+        return ndict

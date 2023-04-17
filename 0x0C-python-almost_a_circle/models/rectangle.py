@@ -75,7 +75,8 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         if len(args) > 0:
-            self.id = args[0]
+            if arg[0] != None or type(args[0]) == int:
+                self.id = args[0]
         if len(args) > 1:
             self.width = args[1]
         if len(args) > 2:
@@ -89,10 +90,7 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        return {
-                'x': self.x,
-                'y': self.y,
-                'id': self.id,
-                'height': self.height,
-                'width': self.width
-                }
+        ndict = dict()
+        for key in self.__dict__:
+            ndict[key.replace("_Rectangle__", "")] = self.__dict__[key]
+        return ndict
