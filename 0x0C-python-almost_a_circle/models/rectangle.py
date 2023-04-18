@@ -3,13 +3,15 @@
 """
 
 
-from .base import Base
+Base = __import__('base').Base
 
 
 class Rectangle(Base):
     """Rectangle Class
     """
     def __init__(self, width, height, x=0, y=0, id=None):
+        """initialize Rectangle class
+        """
         super().__init__(id)
         self.validate_integer("width", width)
         self.validate_integer("height", height)
