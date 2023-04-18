@@ -67,6 +67,9 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
+        from os.path import exists
+        if not exists("{}.json".format(cls.__name__)):
+            return []
         with open(
                 "{}.json".format(cls.__name__),
                 'r',
