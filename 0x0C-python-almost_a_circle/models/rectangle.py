@@ -59,9 +59,15 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """return Area of the 
+        Rectangle
+        """
         return self.__width * self.__height
 
     def display(self):
+        """Display a graphical representation
+        of the Rectangle
+        """
         print('\n' * self.y, end="")
         for _ in range(self.__width):
             print("{}".format(" " * self.x), end="")
@@ -78,6 +84,7 @@ class Rectangle(Base):
                 self.__height)
 
     def update(self, *args, **kwargs):
+        """Update the Rectangle object"""
         if len(args) > 0:
             if arg[0] is not None or type(args[0]) == int:
                 self.id = args[0]
@@ -94,6 +101,9 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Convert the Rectangle
+        to dictionary
+        """
         ndict = dict()
         for key in self.__dict__:
             ndict[key.replace("_Rectangle__", "")] = self.__dict__[key]
