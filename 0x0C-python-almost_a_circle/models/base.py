@@ -14,7 +14,7 @@ class Base:
     def __init__(self, id=None):
         """initialise base class
         """
-        if id != None:
+        if id is not None:
             self.id = id
         else:
             Base.__nb_objects += 1
@@ -33,7 +33,7 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return '[]'
         return json.dumps(list_dictionaries)
 
@@ -44,14 +44,14 @@ class Base:
                 'w',
                 encoding='utf-8'
                 ) as f:
-            if list_objs == None:
+            if list_objs is None:
                 return
             dicts = map(cls.to_dictionary, list_objs)
             f.write(Base.to_json_string(list(dicts)))
 
     @staticmethod
     def from_json_string(json_string):
-        if json_string == None:
+        if json_string is None:
             return []
         return json.loads(json_string)
 
