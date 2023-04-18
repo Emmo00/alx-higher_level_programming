@@ -45,6 +45,7 @@ class Base:
                 encoding='utf-8'
                 ) as f:
             if list_objs is None:
+                f.write("[]")
                 return
             dicts = map(cls.to_dictionary, list_objs)
             f.write(Base.to_json_string(list(dicts)))
