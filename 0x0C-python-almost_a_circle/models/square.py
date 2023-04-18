@@ -10,6 +10,9 @@ class Square(Rectangle):
     """Square class
     """
     def __init__(self, size, x=0, y=0, id=None):
+        """initialize the Square Class
+        calls Parent class (Rectangle)
+        """
         super().__init__(size, size, x, y, id)
 
     @property
@@ -22,6 +25,9 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Update the Square
+        object
+        """
         if len(args) >= 2:
             args = list(args)
             args.insert(1, args[1])
@@ -37,6 +43,9 @@ class Square(Rectangle):
                 )
 
     def to_dictionary(self):
+        """Return dictionary representation of
+        the Square class
+        """
         ndict = super().to_dictionary()
         ndict['size'] = ndict['width']
         del ndict['width']
