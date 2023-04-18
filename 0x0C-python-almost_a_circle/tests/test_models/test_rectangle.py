@@ -20,6 +20,7 @@ class TestRectangleClass(unittest.TestCase):
         self.rectangle3 = Rectangle(3, 2, 3, 2)
 
     def tearDown(self):
+        Rectangle.reset_nb_objects()
         del self.rectangle1
         del self.rectangle2
         del self.rectangle3
