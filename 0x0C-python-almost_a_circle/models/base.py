@@ -59,7 +59,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         if 'size' in dictionary.keys():
-            new_obj = cls(1, 1)
+            new_obj = cls(1)
         else:
             new_obj = cls(1, 1)
         new_obj.update(**dictionary)
