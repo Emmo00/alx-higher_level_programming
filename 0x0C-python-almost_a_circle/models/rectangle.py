@@ -86,7 +86,7 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update the Rectangle object"""
         if len(args) > 0:
-            if arg[0] is not None or type(args[0]) == int:
+            if args[0] is not None or type(args[0]) == int:
                 self.id = args[0]
         if len(args) > 1:
             self.width = args[1]
