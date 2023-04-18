@@ -7,6 +7,8 @@ from .base import Base
 
 
 class Rectangle(Base):
+    """Rectangle Class
+    """
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         self.validate_integer("width", width)
@@ -75,7 +77,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         if len(args) > 0:
-            if arg[0] != None or type(args[0]) == int:
+            if arg[0] is not None or type(args[0]) == int:
                 self.id = args[0]
         if len(args) > 1:
             self.width = args[1]
