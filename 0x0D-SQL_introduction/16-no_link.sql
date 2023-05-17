@@ -1,2 +1,2 @@
 -- some
-SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY number DESC;
+SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
