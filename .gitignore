@@ -1,5 +1,6 @@
 #test files
 main.py
+main.c
 # py cache
 __pycache__/
 
