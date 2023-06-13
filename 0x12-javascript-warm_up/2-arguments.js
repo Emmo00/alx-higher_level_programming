@@ -1,4 +1,4 @@
-#!/usr/bin/nodejs
+#!/usr/bin/node
 let argumentLength = process.argv.length
 if (argumentLength <= 2) {
     console.log('No argument')
