@@ -21,5 +21,8 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    row = session.query(State).order_by(State.id).first()
-    print('{}: {}'.format(row.id, row.name))
+    try:
+        row = session.query(State).order_by(State.id).first()
+        print('{}: {}'.format(row.id, row.name))
+    except e:
+        pass
