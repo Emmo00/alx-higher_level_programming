@@ -21,6 +21,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    rows = session.query(State).filter(State.name.like('%a%')).order_by(State.id)
+    rows = session.query(State)\
+    .filter(State.name.like('%a%')).order_by(State.id)
     for row in rows:
         print('{}: {}'.format(row.id, row.name))
