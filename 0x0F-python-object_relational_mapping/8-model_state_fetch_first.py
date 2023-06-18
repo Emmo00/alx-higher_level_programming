@@ -25,4 +25,4 @@ if __name__ == '__main__':
         row = session.query(State).order_by(State.id).first()
         print('{}: {}'.format(row.id, row.name))
     except AttributeError:
-        pass
+        print("")
