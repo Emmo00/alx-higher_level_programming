@@ -26,5 +26,4 @@ if __name__ == '__main__':
     session.add(state)
     session.commit()
 
-    state = session.query(State).filter(State.name == state.name).first()
     print(state.id)
