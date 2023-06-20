@@ -19,7 +19,7 @@ if __name__ == '__main__':
         charset="utf8")
     cur = conn.cursor()
 
-    query = "SELECT * FROM states WHERE name LIKE \
+    query = "SELECT * FROM states WHERE name LIKE BINARY \
     '{}' ORDER BY id ASC".format(name)
     cur.execute(query)
 
