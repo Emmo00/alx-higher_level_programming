@@ -19,7 +19,7 @@ if __name__ == '__main__':
     cur = conn.cursor()
 
     try:
-        query = "SELECT * FROM states WHERE name REGEXP '^N.*' ORDER BY id ASC"
+        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
         cur.execute(query)
 
         rows = cur.fetchall()
