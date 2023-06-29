@@ -5,8 +5,13 @@ displays the body of the response"""
 
 if __name__ == '__main__':
     import urllib.request
+    import urllib.parse
     import sys
 
     url = sys.argv[1]
     email = sys.argv[2]
-    with urllib.request.urlopen(url) as response:
+    data = {'email': email}
+    data = urllib.parse.urlencode(data).encode('utf8')
+    request = urllib.request.Request(url, data=data, method="POST")
+    with urllib.request.urlopen(request) as response:
+        print(f'{response.read().decode("utf8")}')
