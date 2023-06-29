@@ -9,7 +9,11 @@ if __name__ == '__main__':
     if len(sys.argv) >= 2:
         q = sys.argv[1]
     res = requests.post("http://0.0.0.0:5000/search_user", data={'q': q})
-    result = res.json()
+    try:
+        result = res.json()
+    except Exception:
+        print("Not a valid JSON")
+        sys.exit(1)
     if len(result) == 0:
         print("No result")
     else:
