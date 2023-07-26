@@ -3,4 +3,5 @@ main.py
 main.c
 # py cache
 __pycache__/
+node_modules/
 
