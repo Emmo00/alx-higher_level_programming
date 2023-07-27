@@ -9,6 +9,6 @@ request.get(apiURL, (err, res, data) => {
     request.get(`https://swapi-api.alx-tools.com/api${character}`, (error, res, data) => {
       if (error) console.log(error);
       console.log(JSON.parse(data).name);
-    })
+    });
   }
 });
