@@ -1,5 +1,7 @@
+const $ = window.$;
+
 $(function () {
-  let list = $('UL.my_list');
+  const list = $('UL.my_list');
   $('DIV#add_item').on('click', function () {
     list.append('<li>Item</li>');
   });
